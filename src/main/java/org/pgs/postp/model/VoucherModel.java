@@ -11,27 +11,32 @@ public class VoucherModel {
     @Column(name = "VoucherID")
     private Long voucherID;
 
-    @Column(name = "VoucherType", nullable = false)
-    private String voucherType;
-
-    @Column(name = "VoucherDuration")
-    private Integer voucherDuration;
-
-    @Column(name = "VoucherCount")
-    private Integer voucherCount;
+    @Column(name = "VoucherCode", nullable = false, unique = true)
+    private String voucherCode;
 
     @Column(name = "DiscountAmount", nullable = false)
     private Double discountAmount;
+
+    @Column(name = "ValidForNumberOfCustomers")
+    private Integer validForNumberOfCustomers;
+
+    @Column(name = "ValidForNumberOfDays")
+    private Integer validForNumberOfDays;
+
+//    @Temporal(TemporalType.DATE)
+//    @Column(name = "ValidUntil")
+//    private Date validUntil;
 
     // Constructors
     public VoucherModel() {
     }
 
-    public VoucherModel(String voucherType, Integer voucherDuration, Integer voucherCount, Double discountAmount) {
-        this.voucherType = voucherType;
-        this.voucherDuration = voucherDuration;
-        this.voucherCount = voucherCount;
+    public VoucherModel(String voucherCode, Double discountAmount, Integer validForNumberOfCustomers, Integer validForNumberOfDays) {
+        this.voucherCode = voucherCode;
         this.discountAmount = discountAmount;
+        this.validForNumberOfCustomers = validForNumberOfCustomers;
+        this.validForNumberOfDays = validForNumberOfDays;
+//        this.validUntil = validUntil;
     }
 
     // Getters and Setters
@@ -43,28 +48,12 @@ public class VoucherModel {
         this.voucherID = voucherID;
     }
 
-    public String getVoucherType() {
-        return voucherType;
+    public String getVoucherCode() {
+        return voucherCode;
     }
 
-    public void setVoucherType(String voucherType) {
-        this.voucherType = voucherType;
-    }
-
-    public Integer getVoucherDuration() {
-        return voucherDuration;
-    }
-
-    public void setVoucherDuration(Integer voucherDuration) {
-        this.voucherDuration = voucherDuration;
-    }
-
-    public Integer getVoucherCount() {
-        return voucherCount;
-    }
-
-    public void setVoucherCount(Integer voucherCount) {
-        this.voucherCount = voucherCount;
+    public void setVoucherCode(String voucherCode) {
+        this.voucherCode = voucherCode;
     }
 
     public Double getDiscountAmount() {
@@ -74,4 +63,28 @@ public class VoucherModel {
     public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
+
+    public Integer getValidForNumberOfCustomers() {
+        return validForNumberOfCustomers;
+    }
+
+    public void setValidForNumberOfCustomers(Integer validForNumberOfCustomers) {
+        this.validForNumberOfCustomers = validForNumberOfCustomers;
+    }
+
+    public Integer getValidForNumberOfDays() {
+        return validForNumberOfDays;
+    }
+
+    public void setValidForNumberOfDays(Integer validForNumberOfDays) {
+        this.validForNumberOfDays = validForNumberOfDays;
+    }
+
+//    public Date getValidUntil() {
+//        return validUntil;
+//    }
+//
+//    public void setValidUntil(Date validUntil) {
+//        this.validUntil = validUntil;
+//    }
 }

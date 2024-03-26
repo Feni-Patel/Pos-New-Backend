@@ -1,15 +1,17 @@
 package org.pgs.postp.dto;
 
+import java.math.BigDecimal;
+
 public class InventoryDTO {
     private Long inventoryID;
     private Long productId;
-    private int quantity;
+    private BigDecimal quantity;
 
     // Constructors
     public InventoryDTO() {
     }
 
-    public InventoryDTO(Long inventoryID, Long productId, int quantity) {
+    public InventoryDTO(Long inventoryID, Long productId, BigDecimal quantity) {
         this.inventoryID = inventoryID;
         this.productId = productId;
         this.quantity = quantity;
@@ -32,11 +34,11 @@ public class InventoryDTO {
         this.productId = productId;
     }
 
-    public int getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
     }
 }

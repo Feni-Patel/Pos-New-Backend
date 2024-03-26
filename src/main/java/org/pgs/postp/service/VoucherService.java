@@ -11,7 +11,7 @@ public interface VoucherService {
 
     VoucherDTO createVoucher(VoucherDTO voucherDTO);
 
-    VoucherDTO updateVoucher(Long id, VoucherDTO voucherDTO);
+    VoucherDTO updateVoucher(Long id, VoucherDTO voucherDTO); // Updated method signature
 
     void deleteVoucher(Long id);
 }

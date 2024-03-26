@@ -1,15 +1,17 @@
 package org.pgs.postp.dto;
 
+import java.math.BigDecimal;
+
 public class TaxDTO {
     private Long taxID;
     private String taxName;
-    private double taxRate;
+    private BigDecimal taxRate;
 
     // Constructors
     public TaxDTO() {
     }
 
-    public TaxDTO(Long taxID, String taxName, double taxRate) {
+    public TaxDTO(Long taxID, String taxName, BigDecimal taxRate) {
         this.taxID = taxID;
         this.taxName = taxName;
         this.taxRate = taxRate;
@@ -32,11 +34,11 @@ public class TaxDTO {
         this.taxName = taxName;
     }
 
-    public double getTaxRate() {
+    public BigDecimal getTaxRate() {
         return taxRate;
     }
 
-    public void setTaxRate(double taxRate) {
+    public void setTaxRate(BigDecimal taxRate) {
         this.taxRate = taxRate;
     }
 }

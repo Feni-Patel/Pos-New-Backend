@@ -49,6 +49,9 @@ public class RoleServiceImpl implements RoleService {
     public RoleDTO updateRole(Long id, RoleDTO roleDTO) {
         RoleModel existingRole = roleRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Role not found with id: " + id));
+        if (roleDTO.getRoleName() != null) {
+            existingRole.setRoleName(roleDTO.getRoleName());
+        }
         // Update properties here
         RoleModel updatedRole = roleRepository.save(existingRole);
         return roleMapper.toDTO(updatedRole);

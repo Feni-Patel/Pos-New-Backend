@@ -1,10 +1,12 @@
 package org.pgs.postp.dto;
 
+import java.math.BigDecimal;
+
 public class TransactionDetailDTO {
     private Long transactionDetailID;
     private Long transactionID;
     private Long productID;
-    private int quantity;
+    private BigDecimal quantity;
     private double unitPrice;
     private double discount;
 
@@ -32,11 +34,11 @@ public class TransactionDetailDTO {
         this.productID = productID;
     }
 
-    public int getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
     }
 

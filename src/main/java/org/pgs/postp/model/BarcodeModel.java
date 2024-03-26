@@ -11,20 +11,27 @@ public class BarcodeModel {
     @Column(name = "BarcodeID")
     private Long barcodeID;
 
-    @OneToOne
-    @JoinColumn(name = "ProductID", nullable = false)
-    private ProductModel product;
+//    @OneToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "ProductID", referencedColumnName = "ProductID")
+//    private ProductModel product;
 
     @Column(name = "BarcodeNumber", unique = true, nullable = false)
     private String barcodeNumber;
+
+    // Additional field
+    @Lob
+    @Column(name = "BarcodeImage")
+    private byte[] barcodeImage;
 
     // Constructors
     public BarcodeModel() {
     }
 
-    public BarcodeModel(ProductModel product, String barcodeNumber) {
-        this.product = product;
+    public BarcodeModel(Long barcodeID, String barcodeNumber, byte[] barcodeImage) {
+        this.barcodeID = barcodeID;
+//        this.product = product;
         this.barcodeNumber = barcodeNumber;
+        this.barcodeImage = barcodeImage;
     }
 
     // Getters and Setters
@@ -36,13 +43,13 @@ public class BarcodeModel {
         this.barcodeID = barcodeID;
     }
 
-    public ProductModel getProduct() {
-        return product;
-    }
-
-    public void setProduct(ProductModel product) {
-        this.product = product;
-    }
+//    public ProductModel getProduct() {
+//        return product;
+//    }
+//
+//    public void setProduct(ProductModel product) {
+//        this.product = product;
+//    }
 
     public String getBarcodeNumber() {
         return barcodeNumber;
@@ -50,5 +57,13 @@ public class BarcodeModel {
 
     public void setBarcodeNumber(String barcodeNumber) {
         this.barcodeNumber = barcodeNumber;
+    }
+
+    public byte[] getBarcodeImage() {
+        return barcodeImage;
+    }
+
+    public void setBarcodeImage(byte[] barcodeImage) {
+        this.barcodeImage = barcodeImage;
     }
 }

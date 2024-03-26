@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/invoice-returns")
+@CrossOrigin( origins = "http://Localhost:4200")
+
 public class InvoiceReturnController {
 
     private final InvoiceReturnService invoiceReturnService;

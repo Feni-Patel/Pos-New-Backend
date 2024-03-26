@@ -1,7 +1,8 @@
 package org.pgs.postp.model;
 
 import jakarta.persistence.*;
-import java.util.List;
+
+import java.math.BigInteger;
 
 @Entity
 @Table(name = "Suppliers")
@@ -12,26 +13,40 @@ public class SupplierModel {
     @Column(name = "SupplierID")
     private Long supplierID;
 
-    @Column(name = "Name", nullable = false)
-    private String name;
+    @Column(name = "SupplierAgency", nullable = false)
+    private String supplierAgency;
 
-    @Column(name = "Email")
-    private String email;
+    @Column(name = "ContactPerson")
+    private String contactPerson;
 
-    @Column(name = "Phone")
-    private String phone;
+    @Column(name = "SupplierEmail")
+    private String supplierEmail;
 
-    @OneToMany(mappedBy = "supplier")
-    private List<ProductModel> products;
+    @Column(name = "SupplierPhone")
+    private BigInteger supplierPhone;
+
+    @Column(name = "ContactPersonEmail")
+    private String contactPersonEmail;
+
+    @Column(name = "ContactPersonPhone")
+    private BigInteger contactPersonPhone;
+
+    @Column(name = "Address")
+    private String address;
 
     // Constructors
     public SupplierModel() {
     }
 
-    public SupplierModel(String name, String email, String phone) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
+    public SupplierModel(String supplierAgency, String contactPerson, String supplierEmail, BigInteger supplierPhone,
+                         String contactPersonEmail, BigInteger contactPersonPhone, String address) {
+        this.supplierAgency = supplierAgency;
+        this.contactPerson = contactPerson;
+        this.supplierEmail = supplierEmail;
+        this.supplierPhone = supplierPhone;
+        this.contactPersonEmail = contactPersonEmail;
+        this.contactPersonPhone = contactPersonPhone;
+        this.address = address;
     }
 
     // Getters and Setters
@@ -43,35 +58,59 @@ public class SupplierModel {
         this.supplierID = supplierID;
     }
 
-    public String getName() {
-        return name;
+    public String getSupplierAgency() {
+        return supplierAgency;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSupplierAgency(String supplierAgency) {
+        this.supplierAgency = supplierAgency;
     }
 
-    public String getEmail() {
-        return email;
+    public String getContactPerson() {
+        return contactPerson;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setContactPerson(String contactPerson) {
+        this.contactPerson = contactPerson;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getSupplierEmail() {
+        return supplierEmail;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setSupplierEmail(String supplierEmail) {
+        this.supplierEmail = supplierEmail;
     }
 
-    public List<ProductModel> getProducts() {
-        return products;
+    public BigInteger getSupplierPhone() {
+        return supplierPhone;
     }
 
-    public void setProducts(List<ProductModel> products) {
-        this.products = products;
+    public void setSupplierPhone(BigInteger supplierPhone) {
+        this.supplierPhone = supplierPhone;
+    }
+
+    public String getContactPersonEmail() {
+        return contactPersonEmail;
+    }
+
+    public void setContactPersonEmail(String contactPersonEmail) {
+        this.contactPersonEmail = contactPersonEmail;
+    }
+
+    public BigInteger getContactPersonPhone() {
+        return contactPersonPhone;
+    }
+
+    public void setContactPersonPhone(BigInteger contactPersonPhone) {
+        this.contactPersonPhone = contactPersonPhone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

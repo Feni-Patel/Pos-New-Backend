@@ -2,6 +2,8 @@ package org.pgs.postp.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "TransactionDetails")
 public class TransactionDetailModel {
@@ -20,7 +22,7 @@ public class TransactionDetailModel {
     private ProductModel product;
 
     @Column(name = "Quantity", nullable = false)
-    private int quantity;
+    private BigDecimal quantity;
 
     @Column(name = "UnitPrice", nullable = false)
     private double unitPrice;
@@ -32,7 +34,7 @@ public class TransactionDetailModel {
     public TransactionDetailModel() {
     }
 
-    public TransactionDetailModel(TransactionModel transaction, ProductModel product, int quantity, double unitPrice, double discount) {
+    public TransactionDetailModel(TransactionModel transaction, ProductModel product, BigDecimal quantity, double unitPrice, double discount) {
         this.transaction = transaction;
         this.product = product;
         this.quantity = quantity;
@@ -65,11 +67,11 @@ public class TransactionDetailModel {
         this.product = product;
     }
 
-    public int getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
     }
 

@@ -1,19 +1,23 @@
 package org.pgs.postp.dto;
 
+import java.math.BigInteger;
+
 public class CustomerDTO {
     private Long id; // Updated field name
     private String name;
     private String email;
-    private String phone;
+    private BigInteger phone;
+    private String address;
 
     public CustomerDTO() {
     }
 
-    public CustomerDTO(Long id, String name, String email, String phone) {
+    public CustomerDTO(Long id, String name, String email, BigInteger phone,String address ) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.address = address;
     }
 
     public Long getId() { // Updated getter name
@@ -40,12 +44,20 @@ public class CustomerDTO {
         this.email = email;
     }
 
-    public String getPhone() {
+    public BigInteger getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(BigInteger phone) {
         this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
@@ -55,6 +67,7 @@ public class CustomerDTO {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

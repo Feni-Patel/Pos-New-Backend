@@ -2,7 +2,6 @@ package org.pgs.postp.mapper;
 
 import org.pgs.postp.dto.InvoiceDTO;
 import org.pgs.postp.model.InvoiceModel;
-import org.pgs.postp.model.SupplierModel;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,9 +13,18 @@ public class InvoiceMapper {
         }
         InvoiceDTO invoiceDTO = new InvoiceDTO();
         invoiceDTO.setInvoiceID(invoiceModel.getInvoiceID());
-        invoiceDTO.setSupplierId(invoiceModel.getSupplier().getSupplierID());
-        invoiceDTO.setTotalAmount(invoiceModel.getTotalAmount());
-        invoiceDTO.setDueDate(invoiceModel.getDueDate());
+        invoiceDTO.setDateTime(invoiceModel.getDateTime());
+        invoiceDTO.setProducts(invoiceModel.getProducts());
+        invoiceDTO.setPaymentMethod(invoiceModel.getPaymentMethod());
+        invoiceDTO.setBarcodeID(invoiceModel.getBarcodeID());
+        invoiceDTO.setBarcodeNumbers(invoiceModel.getBarcodeNumbers());
+        invoiceDTO.setCustomerName(invoiceModel.getCustomerName());
+        invoiceDTO.setCustomerPhone(invoiceModel.getCustomerPhone());
+        invoiceDTO.setVoucher(invoiceModel.getVoucher());
+        invoiceDTO.setTotalMRP(invoiceModel.getTotalMRP());
+        invoiceDTO.setTotalTax(invoiceModel.getTotalTax());
+        invoiceDTO.setTotalDiscount(invoiceModel.getTotalDiscount());
+        invoiceDTO.setTotalPrice(invoiceModel.getTotalPrice());
         invoiceDTO.setStatus(invoiceModel.getStatus());
         return invoiceDTO;
     }
@@ -27,14 +35,18 @@ public class InvoiceMapper {
         }
         InvoiceModel invoiceModel = new InvoiceModel();
         invoiceModel.setInvoiceID(invoiceDTO.getInvoiceID());
-        // Assuming supplierId is set via SupplierModel object in InvoiceModel
-        if (invoiceDTO.getSupplierId() != null) {
-            SupplierModel supplier = new SupplierModel();
-            supplier.setSupplierID(invoiceDTO.getSupplierId());
-            invoiceModel.setSupplier(supplier);
-        }
-        invoiceModel.setTotalAmount(invoiceDTO.getTotalAmount());
-        invoiceModel.setDueDate(invoiceDTO.getDueDate());
+        invoiceModel.setDateTime(invoiceDTO.getDateTime());
+        invoiceModel.setProducts(invoiceDTO.getProducts());
+        invoiceModel.setPaymentMethod(invoiceDTO.getPaymentMethod());
+        invoiceModel.setBarcodeID(invoiceDTO.getBarcodeID());
+        invoiceModel.setBarcodeNumbers(invoiceDTO.getBarcodeNumbers());
+        invoiceModel.setCustomerName(invoiceDTO.getCustomerName());
+        invoiceModel.setCustomerPhone(invoiceDTO.getCustomerPhone());
+        invoiceModel.setVoucher(invoiceDTO.getVoucher());
+        invoiceModel.setTotalMRP(invoiceDTO.getTotalMRP());
+        invoiceModel.setTotalTax(invoiceDTO.getTotalTax());
+        invoiceModel.setTotalDiscount(invoiceDTO.getTotalDiscount());
+        invoiceModel.setTotalPrice(invoiceDTO.getTotalPrice());
         invoiceModel.setStatus(invoiceDTO.getStatus());
         return invoiceModel;
     }

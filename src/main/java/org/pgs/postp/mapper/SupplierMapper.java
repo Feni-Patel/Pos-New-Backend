@@ -13,21 +13,27 @@ public class SupplierMapper {
     public SupplierDTO toDTO(SupplierModel model) {
         SupplierDTO dto = new SupplierDTO();
         dto.setSupplierID(model.getSupplierID());
-        dto.setName(model.getName());
-        dto.setEmail(model.getEmail());
-        dto.setPhone(model.getPhone());
-        // You might choose to map the list of products here, depending on your requirements
+        dto.setSupplierAgency(model.getSupplierAgency());
+        dto.setContactPerson(model.getContactPerson());
+        dto.setSupplierEmail(model.getSupplierEmail());
+        dto.setSupplierPhone(model.getSupplierPhone());
+        dto.setContactPersonEmail(model.getContactPersonEmail());
+        dto.setContactPersonPhone(model.getContactPersonPhone());
+        dto.setAddress(model.getAddress());
         return dto;
     }
 
     // Convert SupplierDTO to SupplierModel
-    public static SupplierModel toModel(SupplierDTO dto) {
+    public SupplierModel toModel(SupplierDTO dto) {
         SupplierModel model = new SupplierModel();
         model.setSupplierID(dto.getSupplierID());
-        model.setName(dto.getName());
-        model.setEmail(dto.getEmail());
-        model.setPhone(dto.getPhone());
-        // You might choose to map the list of products here, depending on your requirements
+        model.setSupplierAgency(dto.getSupplierAgency());
+        model.setContactPerson(dto.getContactPerson());
+        model.setSupplierEmail(dto.getSupplierEmail());
+        model.setSupplierPhone(dto.getSupplierPhone());
+        model.setContactPersonEmail(dto.getContactPersonEmail());
+        model.setContactPersonPhone(dto.getContactPersonPhone());
+        model.setAddress(dto.getAddress());
         return model;
     }
 
@@ -37,9 +43,13 @@ public class SupplierMapper {
         }
         SupplierModel supplierModel = new SupplierModel();
         supplierModel.setSupplierID(supplierDTO.getSupplierID());
-        supplierModel.setName(supplierDTO.getName());
-        supplierModel.setEmail(supplierDTO.getEmail());
-        supplierModel.setPhone(supplierDTO.getPhone());
+        supplierModel.setSupplierAgency(supplierDTO.getSupplierAgency());
+        supplierModel.setContactPerson(supplierDTO.getContactPerson());
+        supplierModel.setSupplierEmail(supplierDTO.getSupplierEmail());
+        supplierModel.setSupplierPhone(supplierDTO.getSupplierPhone());
+        supplierModel.setContactPersonEmail(supplierDTO.getContactPersonEmail());
+        supplierModel.setContactPersonPhone(supplierDTO.getContactPersonPhone());
+        supplierModel.setAddress(supplierDTO.getAddress());
         return supplierModel;
     }
 

@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/customer-purchase-history")
+@CrossOrigin( origins = "http://Localhost:4200")
+
 public class CustomerPurchaseHistoryController {
 
     private final CustomerPurchaseHistoryService purchaseHistoryService;

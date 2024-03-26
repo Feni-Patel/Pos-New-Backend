@@ -16,6 +16,7 @@ public class CustomerMapper {
         customerDTO.setName(customerModel.getName());
         customerDTO.setEmail(customerModel.getEmail());
         customerDTO.setPhone(customerModel.getPhone());
+        customerDTO.setAddress(customerModel.getAddress());
         // You may also need to map transactions if required
         return customerDTO;
     }
@@ -29,6 +30,7 @@ public class CustomerMapper {
         customerModel.setName(customerDTO.getName());
         customerModel.setEmail(customerDTO.getEmail());
         customerModel.setPhone(customerDTO.getPhone());
+        customerModel.setAddress(customerDTO.getAddress());
         // You may also need to map transactions if required
         return customerModel;
     }

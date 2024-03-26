@@ -2,6 +2,8 @@ package org.pgs.postp.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "Tax")
 public class TaxModel {
@@ -15,13 +17,13 @@ public class TaxModel {
     private String taxName;
 
     @Column(name = "TaxRate", nullable = false)
-    private double taxRate;
+    private BigDecimal taxRate;
 
     // Constructors
     public TaxModel() {
     }
 
-    public TaxModel(String taxName, double taxRate) {
+    public TaxModel(String taxName, BigDecimal taxRate) {
         this.taxName = taxName;
         this.taxRate = taxRate;
     }
@@ -43,11 +45,11 @@ public class TaxModel {
         this.taxName = taxName;
     }
 
-    public double getTaxRate() {
+    public BigDecimal getTaxRate() {
         return taxRate;
     }
 
-    public void setTaxRate(double taxRate) {
+    public void setTaxRate(BigDecimal taxRate) {
         this.taxRate = taxRate;
     }
 }

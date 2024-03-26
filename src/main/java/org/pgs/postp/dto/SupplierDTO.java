@@ -1,20 +1,33 @@
 package org.pgs.postp.dto;
 
+import java.math.BigInteger;
+
 public class SupplierDTO {
+
     private Long supplierID;
-    private String name;
-    private String email;
-    private String phone;
+    private String supplierAgency;
+    private String contactPerson;
+    private String supplierEmail;
+    private BigInteger supplierPhone;
+    private String contactPersonEmail;
+    private BigInteger contactPersonPhone;
+    private String address;
+
 
     // Constructors
     public SupplierDTO() {
     }
 
-    public SupplierDTO(Long supplierID, String name, String email, String phone) {
+    public SupplierDTO(Long supplierID, String supplierAgency, String contactPerson, String supplierEmail,
+                       BigInteger supplierPhone, String contactPersonEmail, BigInteger contactPersonPhone, String address) {
         this.supplierID = supplierID;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
+        this.supplierAgency = supplierAgency;
+        this.contactPerson = contactPerson;
+        this.supplierEmail = supplierEmail;
+        this.supplierPhone = supplierPhone;
+        this.contactPersonEmail = contactPersonEmail;
+        this.contactPersonPhone = contactPersonPhone;
+        this.address = address;
     }
 
     // Getters and Setters
@@ -26,27 +39,59 @@ public class SupplierDTO {
         this.supplierID = supplierID;
     }
 
-    public String getName() {
-        return name;
+    public String getSupplierAgency() {
+        return supplierAgency;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSupplierAgency(String supplierAgency) {
+        this.supplierAgency = supplierAgency;
     }
 
-    public String getEmail() {
-        return email;
+    public String getContactPerson() {
+        return contactPerson;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setContactPerson(String contactPerson) {
+        this.contactPerson = contactPerson;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getSupplierEmail() {
+        return supplierEmail;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setSupplierEmail(String supplierEmail) {
+        this.supplierEmail = supplierEmail;
+    }
+
+    public BigInteger getSupplierPhone() {
+        return supplierPhone;
+    }
+
+    public void setSupplierPhone(BigInteger supplierPhone) {
+        this.supplierPhone = supplierPhone;
+    }
+
+    public String getContactPersonEmail() {
+        return contactPersonEmail;
+    }
+
+    public void setContactPersonEmail(String contactPersonEmail) {
+        this.contactPersonEmail = contactPersonEmail;
+    }
+
+    public BigInteger getContactPersonPhone() {
+        return contactPersonPhone;
+    }
+
+    public void setContactPersonPhone(BigInteger contactPersonPhone) {
+        this.contactPersonPhone = contactPersonPhone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

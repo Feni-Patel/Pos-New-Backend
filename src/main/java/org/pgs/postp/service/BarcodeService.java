@@ -11,7 +11,7 @@ public interface BarcodeService {
 
     BarcodeDTO createBarcode(BarcodeDTO barcodeDTO);
 
-    BarcodeDTO updateBarcode(Long id, BarcodeDTO barcodeDTO); // Change here
+    BarcodeDTO updateBarcode(Long id, BarcodeDTO barcodeDTO);
 
     void deleteBarcode(Long id);
 }

@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/taxes")
+@CrossOrigin( origins = "http://Localhost:4200")
+
 public class TaxController {
 
     private final TaxService taxService;

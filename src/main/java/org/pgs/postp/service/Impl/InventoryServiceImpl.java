@@ -49,6 +49,9 @@ public class InventoryServiceImpl implements InventoryService {
     public InventoryDTO updateInventory(Long id, InventoryDTO inventoryDTO) {
         InventoryModel existingInventory = inventoryRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Inventory not found with id: " + id));
+        if(inventoryDTO.getQuantity()!=null){
+            existingInventory.setQuantity(inventoryDTO.getQuantity());
+        }
         // Update properties here
         InventoryModel updatedInventory = inventoryRepository.save(existingInventory);
         return inventoryMapper.toDTO(updatedInventory);

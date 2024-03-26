@@ -1,11 +1,28 @@
 package org.pgs.postp.dto;
 
+import java.util.Date;
+
 public class VoucherDTO {
+
     private Long voucherID;
-    private String voucherType;
-    private Integer voucherDuration;
-    private Integer voucherCount;
+    private String voucherCode;
     private Double discountAmount;
+    private Integer validForNumberOfCustomers;
+    private Integer validForNumberOfDays;
+//    private Date validUntil;
+
+    // Constructors
+    public VoucherDTO() {
+    }
+
+    public VoucherDTO(Long voucherID, String voucherCode, Double discountAmount, Integer validForNumberOfCustomers, Integer validForNumberOfDays) {
+        this.voucherID = voucherID;
+        this.voucherCode = voucherCode;
+        this.discountAmount = discountAmount;
+        this.validForNumberOfCustomers = validForNumberOfCustomers;
+        this.validForNumberOfDays = validForNumberOfDays;
+//        this.validUntil = validUntil;
+    }
 
     // Getters and Setters
     public Long getVoucherID() {
@@ -16,28 +33,12 @@ public class VoucherDTO {
         this.voucherID = voucherID;
     }
 
-    public String getVoucherType() {
-        return voucherType;
+    public String getVoucherCode() {
+        return voucherCode;
     }
 
-    public void setVoucherType(String voucherType) {
-        this.voucherType = voucherType;
-    }
-
-    public Integer getVoucherDuration() {
-        return voucherDuration;
-    }
-
-    public void setVoucherDuration(Integer voucherDuration) {
-        this.voucherDuration = voucherDuration;
-    }
-
-    public Integer getVoucherCount() {
-        return voucherCount;
-    }
-
-    public void setVoucherCount(Integer voucherCount) {
-        this.voucherCount = voucherCount;
+    public void setVoucherCode(String voucherCode) {
+        this.voucherCode = voucherCode;
     }
 
     public Double getDiscountAmount() {
@@ -47,4 +48,28 @@ public class VoucherDTO {
     public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
+
+    public Integer getValidForNumberOfCustomers() {
+        return validForNumberOfCustomers;
+    }
+
+    public void setValidForNumberOfCustomers(Integer validForNumberOfCustomers) {
+        this.validForNumberOfCustomers = validForNumberOfCustomers;
+    }
+
+    public Integer getValidForNumberOfDays() {
+        return validForNumberOfDays;
+    }
+
+    public void setValidForNumberOfDays(Integer validForNumberOfDays) {
+        this.validForNumberOfDays = validForNumberOfDays;
+    }
+
+//    public Date getValidUntil() {
+//        return validUntil;
+//    }
+//
+//    public void setValidUntil(Date validUntil) {
+//        this.validUntil = validUntil;
+//    }
 }

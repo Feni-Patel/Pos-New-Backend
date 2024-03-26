@@ -1,16 +1,20 @@
 package org.pgs.postp.controller;
 
+import com.google.zxing.WriterException;
 import org.pgs.postp.dto.CustomerDTO;
 import org.pgs.postp.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/customers")
+@CrossOrigin( origins = "http://Localhost:4200")
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -50,4 +54,15 @@ public class CustomerController {
         customerService.deleteCustomer(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @PostMapping("/upload")
+    public ResponseEntity<String> uploadCSVFile(@RequestParam("file") MultipartFile file) {
+        try {
+            customerService.processCSV(file);
+            return ResponseEntity.status(HttpStatus.OK).body("CSV processed successfully");
+        } catch (IOException | WriterException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to process CSV: " + e.getMessage());
+        }
+    }
+
 }

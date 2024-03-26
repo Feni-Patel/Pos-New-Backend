@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/transactions")
+@CrossOrigin( origins = "http://Localhost:4200")
+
 public class TransactionController {
 
     private final TransactionService transactionService;
